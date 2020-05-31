@@ -1,8 +1,12 @@
 import React from 'react';
 
+import './global.css';
+
+import Main from './pages/main';
+
 function App() {
   return (
-    <h1>Olá</h1>
+    <Main />
   );
 }
 
