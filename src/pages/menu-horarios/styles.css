@@ -1,0 +1,27 @@
+.horarios{
+    margin-left: 30%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.horario{
+    padding-top: 5px;
+    display: flex;
+    margin-bottom: 10px;
+    width: 50vw;
+    height: 10vh;
+    min-height: 150px;
+    min-width: 125px;
+    background-color: #0B0E37;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+h2{
+    color: #fff;
+    font-size: 3vh;
+}
