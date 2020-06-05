@@ -10,16 +10,14 @@ import computer from '../../assets/computer1.png';
 export default function Main(){
     const [labs, setLabs] = useState([]);
     useEffect(() => {
-        api.get('room/list', {
-            campus: "cmzl" 
-        }
-        ).then(response => {
+        api.get('room/list',{ params: { campus: "cmzl", page: 1 } })
+            .then(response => {
             setLabs(response.data);
         })
     }, []); 
     
     async function listlab(campus){
-        const NewResponse = await api.get('room/list', { campus });
+        const NewResponse = await api.get('room/list/', { params: campus });
         console.log(NewResponse);
         
     }
