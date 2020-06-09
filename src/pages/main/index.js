@@ -6,6 +6,7 @@ import './styles.css';
 
 import add from '../../assets/add1.png';
 import computer from '../../assets/computer1.png';
+const my_route = '/horarios/:id';
 
 export default function Main(){
     const [labs, setLabs] = useState([]);
@@ -17,9 +18,14 @@ export default function Main(){
     }, []); 
     
     async function listlab(campus){
-        const NewResponse = await api.get('room/list/', { params: campus });
-        console.log(NewResponse);
-        
+        const NewResponse = await api.get('room/list', 
+            { 
+                params: { 
+                    campus: campus, page: 1 
+                } 
+        }).then(NewResponse => {
+            setLabs(NewResponse.data);
+        });
     }
 
     return (
@@ -28,9 +34,9 @@ export default function Main(){
             <header className="titulo">IFAM LABS</header>
             <h3><a href="https://www.linkedin.com/in/marcos-vinicius-551450194/" target="_blank">By: Marcos Vinicius</a></h3>
             <div className="botoes-campus">
-                <button className="campus">CMZL</button>
+                <button className="campus" onClick={() => listlab("cmzl")}>CMZL</button>
                 <button className="campus" onClick={() => listlab("cmdi")}>CMDI</button>
-                <button className="campus">CMC</button>
+                <button className="campus" onClick={() => listlab("cmc")}>CMC</button>
             </div>
             <button className="login">Login</button>
         </div>
@@ -43,8 +49,8 @@ export default function Main(){
                         <h2 className="capacidade">Capacidade: {lab.capacidade}</h2>
                         <h2 className="local">Local: {lab.local}</h2>
                     </div>
-                    <Link to="/horarios">
-                    <img className="add" src={add} alt="ver mais"/>
+                    <Link to={ my_route.replace(':id', lab.id)}>
+                        <img className="add" src={add} alt="ver mais"/>
                     </ Link>
                 </div>
             ))}

@@ -9,3 +9,6 @@
 [0601/220501.589:ERROR:crashpad.cc(145)] Failed to get activation factory for IPlatformDiagnosticsAndUsageDataSettingsStatics
 [0602/161927.104:ERROR:crashpad.cc(145)] Failed to get activation factory for IPlatformDiagnosticsAndUsageDataSettingsStatics
 [0604/211323.500:ERROR:crashpad.cc(145)] Failed to get activation factory for IPlatformDiagnosticsAndUsageDataSettingsStatics
+[0604/215411.224:ERROR:crashpad.cc(145)] Failed to get activation factory for IPlatformDiagnosticsAndUsageDataSettingsStatics
+[0608/212133.382:ERROR:crashpad.cc(145)] Failed to get activation factory for IPlatformDiagnosticsAndUsageDataSettingsStatics
+[0608/214748.610:ERROR:crashpad.cc(145)] Failed to get activation factory for IPlatformDiagnosticsAndUsageDataSettingsStatics
